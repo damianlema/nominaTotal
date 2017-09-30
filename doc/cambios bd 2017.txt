@@ -1,0 +1,18 @@
+UPDATE `tipo_movimiento_personal` SET `relacion_laboral` = 'egreso' WHERE `tipo_movimiento_personal`.`idtipo_movimiento` = 2;
+
+INSERT INTO `accion` (`id_accion`, `nombre_accion`, `id_modulo`, `url`, `mostrar`, `accion_padre`, `posicion`) VALUES (NULL, 'Importar Prestaciones', '0', 'modulos/rrhh/cargar_prestaciones.php ', '1', '5', '5');
+
+ALTER TABLE `tabla_prestaciones` ADD `dias_bono_vacacional` INT(4) NOT NULL AFTER `sueldo`;
+ALTER TABLE `tabla_prestaciones` ADD `dias_bono_fin_anio` INT(4) NOT NULL AFTER `bono_vacacional`;
+
+ALTER TABLE `leyes_prestaciones` ADD `capitaliza_intereses` VARCHAR(2) NOT NULL AFTER `anio_hasta`;
+UPDATE `leyes_prestaciones` SET `capitaliza_intereses` = 'no' WHERE `leyes_prestaciones`.`idleyes_prestaciones` = 3;
+
+
+ALTER TABLE `partidas_cedentes_traslado` ADD FOREIGN KEY (`idtraslados_presupuestarios`) REFERENCES `traslados_presupuestarios`(`idtraslados_presupuestarios`) ON DELETE CASCADE ON UPDATE RESTRICT;
+
+ALTER TABLE `partidas_cedentes_traslado` ADD FOREIGN KEY (`idmaestro_presupuesto`) REFERENCES `maestro_presupuesto`(`idRegistro`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `partidas_receptoras_traslado` ADD FOREIGN KEY (`idtraslados_presupuestarios`) REFERENCES `traslados_presupuestarios`(`idtraslados_presupuestarios`) ON DELETE CASCADE ON UPDATE RESTRICT;
+
+ALTER TABLE `partidas_receptoras_traslado` ADD FOREIGN KEY (`idmaestro_presupuesto`) REFERENCES `maestro_presupuesto`(`idRegistro`) ON DELETE RESTRICT ON UPDATE RESTRICT;
