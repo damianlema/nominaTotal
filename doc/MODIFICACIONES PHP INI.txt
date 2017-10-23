@@ -19,7 +19,7 @@
 
 	; Maximum allowed size for uploaded files.
 	upload_max_filesize = 200M
-	
+
 5.- Ajustar el tamaño de los datos enviados por el POST
 
 	; Maximum size of POST data that PHP will accept.
@@ -28,6 +28,6 @@
 6.- Desactivar los mensajes de error de PHP
 
 	display_errors = Off
-	
+
 	short_open_tag = On
 
