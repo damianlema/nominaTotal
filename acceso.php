@@ -25,7 +25,7 @@ include_once "funciones/funciones.php";
 	<head>
 
 	    <link rel="shortcut icon" href="imagenes/icono_sistema.ico" type="image/x-icon" />
-		<title>.:: SINTEGESP ::. Sistema Integrado de Gesti&oacute;n P&uacute;blica</title>
+		<title>.:: NominaTOTAL ::.</title>
 
 		<link href="css/theme/green/main.css" rel="stylesheet" type="text/css"> <!carga la hoja de estilo>
 
